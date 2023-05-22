@@ -1,0 +1,72 @@
+[
+  {
+    "nombre": "Ciro Y Los Persas",
+    "descripcion": "Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles",
+    "precio": "8500",
+    "urlImagen": "https://pbs.twimg.com/media/Fs4qvuiXgAEInr4.jpg",
+    "id": "4"
+  },
+  {
+    "nombre": "Don Osvaldo",
+    "descripcion": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "precio": "7500",
+    "urlImagen": "https://www.don-osvaldo.com.ar/chaco.jpeg",
+    "id": "5"
+  },
+  {
+    "nombre": "La Vela Puerca",
+    "descripcion": "The slim & simple Maple Gaming Keyboard from Dev Byte comes with a sleek body and 7- Color RGB LED Back-lighting for smart functionality",
+    "precio": "6300",
+    "urlImagen": "https://bamedios.com.ar/wp-content/uploads/2023/01/la_vela_puerca_2023.jpeg",
+    "id": "6"
+  },
+  {
+    "nombre": "Guasones",
+    "descripcion": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "precio": "9865",
+    "urlImagen": "https://www.guasones.ar/files/img/guasones-og-laplata-2023.jpg",
+    "id": "7"
+  },
+  {
+    "nombre": "Jovenes Pordioseros",
+    "descripcion": "The automobile layout consists of a front-engine design, with transaxle-type transmissions mounted at the rear of the engine and four wheel drive",
+    "precio": "4500",
+    "urlImagen": "https://www.inforegion.com.ar/wp-content/uploads/2022/07/unnamed-scaled.jpg",
+    "id": "8"
+  },
+  {
+    "nombre": "La Renga",
+    "descripcion": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "precio": "11000",
+    "urlImagen": "https://www.larenga.com/concordia.jpeg",
+    "id": "9"
+  },
+  {
+    "nombre": "No Te Va A Gustar",
+    "descripcion": "The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J",
+    "precio": "8700",
+    "urlImagen": "https://pbs.twimg.com/media/Frw3DqGWcAAqV4b.jpg",
+    "id": "11"
+  },
+  {
+    "nombre": "Cuarteto De Nos",
+    "descripcion": "The Football Is Good For Training And Recreational Purposes",
+    "precio": "6130",
+    "urlImagen": "https://i0.wp.com/lacarteleramx.com/wp-content/uploads/2022/09/809e16aa-cuarteto-de-nos-gira_lacarteleramx_mx-2.jpg?resize=768%2C768&ssl=1",
+    "id": "12"
+  },
+  {
+    "nombre": "Caras Extrañas",
+    "descripcion": "New range of formal shirts are designed keeping you in mind. With fits and styling that will make you stand apart",
+    "precio": "5320",
+    "urlImagen": "https://es.concerts-metal.com/images/flyers/202302/1676710491.webp",
+    "id": "13"
+  },
+  {
+    "nombre": "Catupecu Machu",
+    "descripcion": "Andy shoes are designed to keeping in mind durability as well as trends, the most stylish range of shoes & sandals",
+    "precio": "8999",
+    "urlImagen": "https://s3.sa-east-1.amazonaws.com/contenido.general.entradauno/Venues/Movistar_Arena/Catupecu_machu/720x405_Destacada.jpg",
+    "id": "14"
+  }
+]
