@@ -1,46 +1,66 @@
-const divTitle = document.createElement("div");
-divTitle.setAttribute("id", "title");
+function HomePage() {
+  const divTitle = document.createElement("div");
+  divTitle.setAttribute("id", "title");
 
-var htmltTitle = `
+  var htmltTitle = `
 <h1>LA TIENDITA DE TITI</h1>
 `;
 
-divTitle.innerHTML = htmltTitle;
-document.body.appendChild(divTitle);
-/////////////TITULO////////////////////////
+  divTitle.innerHTML = htmltTitle;
+  document.body.appendChild(divTitle);
+  /////////////TITULO////////////////////////
 
-const divForm = document.createElement("div");
-divForm.setAttribute("id", "form");
+  const divForm = document.createElement("div");
+  divForm.setAttribute("id", "form");
 
-var htmlForm = `
+  var htmlForm = `
 <form action="/buscar" method="get">
       <input type="text" name="q" placeholder="Buscar..." />
       <button type="submit">Buscar</button>
     </form>
 `;
 
-divForm.innerHTML = htmlForm;
-document.body.appendChild(divForm);
+  divForm.innerHTML = htmlForm;
+  document.body.appendChild(divForm);
 
-/////////////FORM////////////////////////
+  const divOrdenar = document.createElement("div");
+  divOrdenar.setAttribute("id", "ordenar");
 
-/////////////CARD////////////////////////
+  var htmlOrdenar = `
+  <h4>Ordenar por</h4>
+            <select name="orderBy" id="orderBy" class="form-control">
+                <option value="nada">-</option>
+                <option value="mayorPrecio">Mayor precio</option>
+                <option value="menorPrecio">Menor precio</option>
+            </select>
+            `;
 
-fetch("mock.json")
-  .then((response) => response.json())
-  .then((data) => {
-    for (var i = 0; i < 10; i++) {
-      const divCard = document.createElement("div");
-      divCard.setAttribute("id", "card");
-      var htmlCard = `
+  divOrdenar.innerHTML = htmlOrdenar;
+  document.body.appendChild(divOrdenar);
+
+  /////////////FORM////////////////////////
+
+  fetch("mock.json")
+    .then((response) => response.json())
+    .then((data) => {
+      for (var i = 0; i < 10; i++) {
+        const divCard = document.createElement("div");
+        divCard.setAttribute("id", "card");
+        var htmlCard = `
           <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-md-4">
-                    <img
-                      src="${data[i].urlImagen}"
-                      class="img-fluid rounded-start"
-                      alt="..."
-                    />
+                  <article>
+                  <img
+                  src="${data[i].urlImagen}"
+                  class="img-fluid rounded-start"
+                  alt="..."
+                />
+                <img src="${data[i].urlImagenHover}"
+                 class="img-fluid rounded-start"
+                 alt="..."
+                  </article>
+                    
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -52,13 +72,33 @@ fetch("mock.json")
               </div>
           `;
 
-      divCard.innerHTML = htmlCard;
-      document.body.appendChild(divCard);
-    }
-    // Aquí puedes trabajar con los datos del archivo JSON
-    console.log(data);
-  })
-  .catch((error) => {
-    // Manejo de errores en caso de que la carga falle
-    console.error("Error al cargar el archivo JSON:", error);
-  });
+        divCard.innerHTML = htmlCard;
+        document.body.appendChild(divCard);
+      }
+      var orderBy = document.getElementById("orderBy");
+      var precioData = data.precio;
+      function Comparacion(a, b) {
+        return a - b;
+      }
+      orderBy.addEventListener("change", (e) => {
+        if (e.target.value == "mayorPrecio") {
+          data.forEach((data) => {
+            alert("entre");
+            precioData.sort(Comparacion);
+            console.log(data.precio);
+          });
+        }
+      });
+      // Aquí puedes trabajar con los datos del archivo JSON
+      console.log(data);
+      console.log(data.precio);
+    })
+    .catch((error) => {
+      // Manejo de errores en caso de que la carga falle
+      console.error("Error al cargar el archivo JSON:", error);
+    });
+
+  /////////////CARD////////////////////////
+}
+
+HomePage();
