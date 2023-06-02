@@ -1,3 +1,8 @@
+/*
+* aquí es importante que lo puedas colocar almacenada en una variable
+* puedas guardarlo como un objeto ""var data={productos: []}"" por ejemplo como te lo menciono
+*/
+
 [
   {
     "nombre": "Ciro Y Los Persas",
