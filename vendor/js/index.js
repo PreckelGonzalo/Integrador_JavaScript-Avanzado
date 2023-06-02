@@ -40,10 +40,14 @@ function HomePage() {
 
   /////////////FORM////////////////////////
 
+  // Teniendo el mock como una variable OBJETO se te hace mucho mas facil la implementación de los datos
+  // no necesitaras el fetch para poder extraer los datos dentro del codigo
+  // para que puedas ordenar y filtrar segun sea el caso
   fetch("mock.json")
     .then((response) => response.json())
     .then((data) => {
       for (var i = 0; i < 10; i++) {
+        //Esta parte del ciclo for seria bueno que lo colocaras dentro del Handlebars para que el pueda hacer las repeticiones
         const divCard = document.createElement("div");
         divCard.setAttribute("id", "card");
         var htmlCard = `
@@ -75,6 +79,7 @@ function HomePage() {
         divCard.innerHTML = htmlCard;
         document.body.appendChild(divCard);
       }
+    // debes crear las funciones o eventos para poder ordenar y filtrar por el nombre
       var orderBy = document.getElementById("orderBy");
       var precioData = data.precio;
       function Comparacion(a, b) {
