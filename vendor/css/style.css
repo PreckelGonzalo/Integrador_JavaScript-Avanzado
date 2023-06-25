@@ -104,3 +104,18 @@ article:hover img:last-child {
   opacity: 1;
   transform: translateY(10%);
 }
+
+@media (min-width: 760px) {
+  div .card {
+    width: 3000px;
+    align-items: left;
+    box-shadow: 2px 2px 80px 5px rgb(250, 14, 14);
+  }
+
+  .card-body {
+  }
+}
+
+div .row.g-0 {
+  width: 100%;
+}

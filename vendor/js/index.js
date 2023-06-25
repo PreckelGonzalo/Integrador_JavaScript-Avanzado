@@ -37,26 +37,35 @@ function HomePage() {
 
   divOrdenar.innerHTML = htmlOrdenar;
   document.body.appendChild(divOrdenar);
+  console.log(grupoMusical.banda);
 
   /////////////FORM////////////////////////
-
-  fetch("mock.json")
-    .then((response) => response.json())
-    .then((data) => {
-      for (var i = 0; i < 10; i++) {
-        const divCard = document.createElement("div");
-        divCard.setAttribute("id", "card");
-        var htmlCard = `
+  function Ordenamiento(array, key1) {
+    return array.sort((a, b) => {
+      if (Number(a[key1]) < Number(b[key1])) {
+        return -1;
+      }
+      if (Number(a[key1]) > Number(b[key1])) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+  grupoMusical.banda.forEach((banda) => {
+    console.log(banda.nombre);
+    const divCard = document.createElement("div");
+    divCard.setAttribute("id", "card");
+    var htmlCard = `
           <div class="card mb-3">
                 <div class="row g-0">
                   <div class="col-md-4">
                   <article>
                   <img
-                  src="${data[i].urlImagen}"
+                  src="${banda.urlImagen}"
                   class="img-fluid rounded-start"
                   alt="..."
                 />
-                <img src="${data[i].urlImagenHover}"
+                <img src="${banda.urlImagenHover}"
                  class="img-fluid rounded-start"
                  alt="..."
                   </article>
@@ -64,39 +73,33 @@ function HomePage() {
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">${data[i].nombre}</h5>
-                      <p class="card-text">${data[i].precio}</p>
-                    </div>
+                      <h5 class="card-title">${banda.nombre}</h5>
+                      <p class="card-text">${banda.precio}</p>
+                    </div> 
                   </div>
                 </div>
               </div>
           `;
 
-        divCard.innerHTML = htmlCard;
-        document.body.appendChild(divCard);
-      }
-      var orderBy = document.getElementById("orderBy");
-      var precioData = data.precio;
-      function Comparacion(a, b) {
-        return a - b;
-      }
-      orderBy.addEventListener("change", (e) => {
-        if (e.target.value == "mayorPrecio") {
-          data.forEach((data) => {
-            alert("entre");
-            precioData.sort(Comparacion);
-            console.log(data.precio);
-          });
-        }
-      });
-      // Aquí puedes trabajar con los datos del archivo JSON
-      console.log(data);
-      console.log(data.precio);
-    })
-    .catch((error) => {
-      // Manejo de errores en caso de que la carga falle
-      console.error("Error al cargar el archivo JSON:", error);
-    });
+    divCard.innerHTML = htmlCard;
+    document.body.appendChild(divCard);
+  });
+
+  var orderBy = document.getElementById("orderBy");
+  orderBy.addEventListener("change", (e) => {
+    if (e.target.value == "mayorPrecio") {
+      Ordenamiento(grupoMusical.banda, "precio").reverse();
+
+      console.log(grupoMusical.banda);
+    }
+    if (e.target.value == "menorPrecio") {
+      Ordenamiento(grupoMusical.banda, "precio");
+
+      console.log(grupoMusical.banda);
+    }
+  });
+
+  // Aquí puedes trabajar con los datos del archivo JSON
 
   /////////////CARD////////////////////////
 }
